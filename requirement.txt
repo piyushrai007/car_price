@@ -3,4 +3,4 @@ jsonify
 requests
 numpy 
 
-sklearn
+skit-learn
