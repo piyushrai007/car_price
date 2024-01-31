@@ -6,6 +6,7 @@ import numpy as np
 import sklearn
 from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
+app.config['TEMPLATE_FOLDER'] = 'templates'
 # model = pickle.load(open('random_forest_car_price.pkl', 'rb'))
 with open('notebook/random_forest_car_price.pkl', 'rb') as file:
     model = pickle.load(file)
