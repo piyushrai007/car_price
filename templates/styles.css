@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/67354.jpg'); /* Replace with the actual path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #5e737a; /* Set text color to a dark shade for better visibility in light mode */
+}
+
+/* Existing styles remain unchanged */
+
+header {
+    background-color: rgba(135, 178, 186, 0.9);
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.profile-details {
+    text-align: left;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+.header-links a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.header-links img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-links img:hover {
+    transform: scale(1.2);
+}
+
+/* Add more styles as needed */
+
+
+main {
+    display: flex;
+}
+
+#ml-details {
+    width: 70%;
+    height: 50; /* Set the height to 100% of the viewport height */
+    overflow-y: auto;   /* Add a vertical scrollbar if needed */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+    padding: 10px;
+}
+#ml-details iframe {
+    width: 100%; /* Make iframe take up 100% of the parent div width */
+    height: 40%; /* Make iframe take up 100% of the parent div height */
+    border-style: ridge; /* Remove iframe border */
+}
+#ml-details h2 {
+    color: #3389c6;
+}
+
+#form-container {
+    flex: 5;
+    padding:10px;
+}
+
+form {
+    background-color: rgba(173, 194, 205, 0.8); /* Semi-transparent white background for better readability */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    background-color: rgba(96, 141, 158, 0.9); /* Semi-transparent light background for better contrast */
+    
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Existing styles remain unchanged */
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Add more styles as needed */
