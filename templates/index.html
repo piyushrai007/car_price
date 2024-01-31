@@ -35,13 +35,15 @@
             <h1>jupyter notebook</h1>
             <iframe src="{{ url_for('static', filename='a.html') }}"></iframe>
 
-            <h2>car price prediction</h2>
+            <h2>car price prediction </h2>
+        <h3 id="predictionText">prediction -{{ prediction_text }} $lakhs</h3>            
+
             <p>"In this project, a predictive model for estimating car prices has been developed using machine learning techniques. The dataset includes various features such as the car's year of manufacture, selling price, present price, kilometers driven, fuel type, seller type, transmission type, and the number of owners. The initial data analysis involved exploring unique values, checking for missing values, and creating a correlation matrix to understand relationships between variables. The dataset was preprocessed by creating a new feature, 'year_old,' representing the age of the car. Categorical variables were one-hot encoded, and the final dataset was split into features (X) and target variable (y). An Extra Trees Regressor was trained on the data to determine feature importances. Subsequently, a Random Forest Regressor model was optimized using Randomized Search Cross-Validation, considering various hyperparameters. The final model achieved good predictive performance, as demonstrated by a scatter plot comparing actual and predicted selling prices. The model has been saved for future use as 'random_forest_car_price.pkl.' This project demonstrates the application of machine learning in predicting car prices, providing valuable insights for both buyers and sellers in the automotive market."</p>
             <!-- Add more details as needed -->
         </div>
 
         <div id="form-container">
-            <form action="{{ url_for('predict')}}" method="post" onsubmit="event.preventDefault(); openPopup();">
+            <form action="{{ url_for('predict')}}" method="post" >
 
                 <!-- Your form inputs and elements remain unchanged -->
                 <h2>model testing</h2>
@@ -72,9 +74,8 @@
                 <br><br>
                 <button type="submit">Calculate the Selling Price</button>
             </form>
-            <h3 id="predictionText">{{ prediction_text }}$lakhs</h3>
-            
         </div>
+
     </main>
    
         
