@@ -5,37 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Price Prediction</title>
-    <link rel="stylesheet" type="text/css" href=""{{ url_for('filename='css/styles.css') }}"">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
 
     <header>
         <div class="profile">
-            <img src="1678460799550.jpg" alt="Profile Photo" class="profile-photo">
+            <img src="{{ url_for('static', filename='1678460799550.jpg') }}" alt="Profile Photo" class="profile-photo">
             <div class="profile-details">
                 <h1>Piyush Rai</h1>
             </div>
-
         </div>
         <div class="header-links">
-            <a href="https://github.com/piyushrai007" target="_blank"><img src="pngegg (1).png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/piyush-rai-3b8714226/" target="_blank"><img src="pngegg.png" alt="LinkedIn"></a>
+            <a href="https://github.com/piyushrai007" target="_blank"><img src="{{ url_for('static', filename='pngegg (1).png') }}" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/piyush-rai-3b8714226/" target="_blank"><img src="{{ url_for('static', filename='pngegg.png') }}" alt="LinkedIn"></a>
             <p>piyushraivds45@gmail.com</p>
         </div>
     </header>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h3 id="predictionText">{{ prediction_text }}$lakhs</h3>
+        </div>
+    </div>
 
     <main>
         <div id="ml-details">
             <h1>jupyter notebook</h1>
-            <iframe src="a.html"></iframe>
+            <iframe src="{{ url_for('static', filename='a.html') }}"></iframe>
+
             <h2>car price prediction</h2>
             <p>"In this project, a predictive model for estimating car prices has been developed using machine learning techniques. The dataset includes various features such as the car's year of manufacture, selling price, present price, kilometers driven, fuel type, seller type, transmission type, and the number of owners. The initial data analysis involved exploring unique values, checking for missing values, and creating a correlation matrix to understand relationships between variables. The dataset was preprocessed by creating a new feature, 'year_old,' representing the age of the car. Categorical variables were one-hot encoded, and the final dataset was split into features (X) and target variable (y). An Extra Trees Regressor was trained on the data to determine feature importances. Subsequently, a Random Forest Regressor model was optimized using Randomized Search Cross-Validation, considering various hyperparameters. The final model achieved good predictive performance, as demonstrated by a scatter plot comparing actual and predicted selling prices. The model has been saved for future use as 'random_forest_car_price.pkl.' This project demonstrates the application of machine learning in predicting car prices, providing valuable insights for both buyers and sellers in the automotive market."</p>
             <!-- Add more details as needed -->
         </div>
 
         <div id="form-container">
-            <form action="{{ url_for('predict')}}" method="post">
+            <form action="{{ url_for('predict')}}" method="post" onsubmit="event.preventDefault(); openPopup();">
+
                 <!-- Your form inputs and elements remain unchanged -->
                 <h2>model testing</h2>
                 <h3>Year</h3>
@@ -65,23 +72,19 @@
                 <br><br>
                 <button type="submit">Calculate the Selling Price</button>
             </form>
+            <h3 id="predictionText">{{ prediction_text }}$lakhs</h3>
             
         </div>
-
     </main>
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h3 id="predictionText">{{ prediction_text }}$lakhs</h3>
-        </div>
-    </div>
-    <footer>
-        <p>Built by Piyush Rai</p>
-    </footer>
-
-    <script src="script.js"></script>
-
-</body>
-
-</html>
-
+   
+        
+    
+        <footer>
+            <p>Built by Piyush Rai</p>
+        </footer>
+    
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
+    </body>
+    
+    </html>
